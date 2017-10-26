@@ -1,0 +1,11 @@
+$(document).ready(
+    function()
+    {
+        $("#next1").click(
+            function()
+            {
+                $("#page1").hide()
+            }
+        )
+    }
+)

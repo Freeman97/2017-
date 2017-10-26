@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>光涂活动排号页面</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/mainstyle.css">
+
+</head>
+
+<body>
+    <div id="outerDiv">
+        <div id="info">
+            <div class="page" id="page1" style="display: block">
+                <p class="title">报名信息填写</p>
+                <p class="text" id="text11">姓名：<input type="text" placeholder="姓名" id="name"/></p>
+                <p class="text" id="text12">电话：<input type="text" placeholder="手机号码" id="phone"/></p>
+                <p class="text" id="text13">邮箱：<input type="mail" placeholder="电子邮箱地址" id="mail"/></p>
+                <p class="text" id="info1">此处显示可能出现的提示信息</p>
+                <button class="btn" id="next1">下一页</button>
+            </div>
+            <div class="page" id="page2" style="display: none">
+                <p id="title2">请选择图案(每人至多选择两项)</p>
+                <div id="innerDiv">
+                    <div class="box" id="pic1">
+                        <input class="check" id="check1" type="checkbox" value="pic1"/>图片1
+                        <img class="img" src="img/pic1.jpg"/>
+                    </div>
+                    <div class="box" id="pic2">
+                        <input class="check" id="check2" type="checkbox" value="pic2"/>图片2
+                        <img class="img" src="img/pic2.jpg"/>
+                    </div>
+                    <div class="box" id="pic3">
+                        <input class="check" id="check3" type="checkbox" value="pic3"/>图片3
+                        <img class="img" src="img/pic3.jpg"/>
+                    </div>
+                    <div class="box" id="pic4">
+                        <input class="check" id="check4" type="checkbox" value="pic4"/>图片4
+                        <img class="img" src="img/pic4.jpg"/>
+                    </div>
+                    <div class="box" id="pic5">
+                        <input class="check" id="check5" type="checkbox" value="pic5"/>图片5
+                        <img class="img" src="img/pic5.jpg"/>
+                    </div>
+                    <div class="box" id="pic6">
+                        <input class="check" id="check6" type="checkbox" value="pic6"/>图片6
+                        <img class="img" src="img/pic6.jpg"/>
+                    </div>
+                    <div id="diy">
+                        <input class="check" id="check7" type="checkbox" value="diy"/>DIY图片
+                    </div>
+                </div>
+                <p id="info2" class="text">此处显示可能出现的提示信息</p>
+                <div id="btn">
+                    <button class="btn" id="back">返回</button>
+                    <button class="btn" id="next2">报名</button>
+                </div>
+            </div>
+            <div class="page" id="page3" style="display: none">
+                <div id="innerDiv2">
+                    <p id="text31">报名成功！</p>
+                    <p id="number">你的编号是：</p>
+                    <p id="text32">活动结束后在公众号回复编号即可获取照片喔</p>
+                    <p id="text33">你所选择的图案是</p>
+                </div>
+                <div id="selected">
+                    <div id="selected1">
+                        <p id="imgname1">图案</p>
+                        <div id="img1"></div>
+                    </div>
+                    <div id="selected2" style="display: none">
+                        <p id="imgname2">图案</p>
+                        <div id="img2"></div>
+                    </div>
+                    <p id="text34">请将该页面的截图向现场的工作人员出示</p>
+                </div>
+                <div id="introtext">
+                    <p>关于百步梯</p>
+                    <p>从1988年成立至今已经15年的百步梯创新中心，在华南理工大学校团委的领导下，和校学生会、社团联合会组成了校三大组织。</p>
+                    <p>如今的百步梯融入在我们校园生活的方方面面，“波板糖”APP主打核心功能校园巴士定位查询；“百步梯波板糖”官方微信，与华工教务系统相连，提供成绩查询、图书查询。线下，百步梯组织拥有“爱上女主播”播音主持大赛、“雕刻时光”电影盛典、“光迹涂鸦”创意集会、“毕业季”文化节等诸多具有广泛影响力的品牌活动。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+</script>
+</html>
