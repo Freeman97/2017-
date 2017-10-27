@@ -6,6 +6,8 @@
     <title>光涂活动排号页面</title>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
+    <!--script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script-->
+    <!--link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"-->
     <link rel="stylesheet" href="css/mainstyle.css">
 
 </head>
@@ -16,7 +18,7 @@
             <div class="page" id="page1" style="display: block">
                 <h class="title">报名信息填写</h>
                 <p class="text" id="text11">姓名：<input type="text" placeholder="姓名" id="name"/></p>
-                <p class="text" id="text12">电话：<input type="text" placeholder="手机号码" id="phone"/></p>
+                <p class="text" id="text12">电话：<input type="number" placeholder="手机号码" id="phone"/></p>
                 <p class="text" id="text13">邮箱：<input type="mail" placeholder="电子邮箱地址" id="mail"/></p>
                 <p class="text" id="info1"></p>
                 <button class="btn" id="next1">下一页</button>
@@ -74,15 +76,15 @@
                 </div>
                 <div id="selected">
                     <div id="selected1">
-                        <p id="imgname1">图案</p>
+                        <p id="imgname1">图案<span id="num1"></span></p>
                         <div id="img1"></div>
                     </div>
                     <div id="selected2" style="display: none">
-                        <p id="imgname2">图案</p>
+                        <p id="imgname2">图案<span id="num2"></span></p>
                         <div id="img2"></div>
                     </div>
-                    <p id="text34">请将该页面的截图向现场的工作人员出示</p>
                 </div>
+                <p id="text34">请将该页面的截图向现场的工作人员出示</p>
                 <div id="introtext">
                     <p>关于百步梯</p>
                     <p>从1988年成立至今已经15年的百步梯创新中心，在华南理工大学校团委的领导下，和校学生会、社团联合会组成了校三大组织。</p>
