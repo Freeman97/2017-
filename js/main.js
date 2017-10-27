@@ -1,8 +1,6 @@
 var name;
 var phone;
 var mail;
-var pic1;
-var pic2;
 
 $(document).ready(
 function()
@@ -16,6 +14,7 @@ $("#next1").click(
         console.log([name, phone, mail]);
         if(checkName(name) && checkPhone(phone) && checkEmail(mail))
         {
+            $("#info1").html("");
             $.ajax(
             {
                 type: "post",
