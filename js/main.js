@@ -11,33 +11,12 @@ $("#next1").click(
         name = $("#name")["0"].value.trim();
         phone = $("#phone")["0"].value.trim();
         mail = $("#mail")["0"].value.trim();
-        console.log([name, phone, mail]);
+        //console.log([name, phone, mail]);
         if(checkName(name) && checkPhone(phone) && checkEmail(mail))
         {
             $("#info1").html("");
-            $.ajax(
-            {
-                type: "post",
-                url: "",
-                data:
-                {
-                    name: name,
-                    phone: phone,
-                    email: mail,
-                },
-                dataType: "json",
-                success: function()
-                {
-                    $("#page1").hide();
-                    $("#page2").show();
-                },
-                error:function()
-                {
-                    $("#page1").hide();
-                    $("#page2").show();
-                }
-            }
-        )
+            $("#page1").hide();
+            $("#page2").show();
         }
     }
 )
@@ -58,37 +37,61 @@ $("#next2").click(
             if(pic[i].checked)
             {
                 checkedpic.push(pic[i].value);
-                console.log(pic[i].value);
+                //console.log(pic[i].value);
             }
         }
         if(checkedpic.length == 2 || checkedpic.length == 1)
         {
+            if(checkedpic.length == 1)
+            {
+                checkedpic.push("none");
+            }
             $.ajax(
                 {
-                    type: "post",
-                    url: "",
+                    type: "POST",
+                    url: "SignUp.php",
                     data:
                     {
-                        name: "",
-                        phone: "",
-                        email: "",
-                        pic1: "",
-                        pic2: "",
+                        "name":name,
+                        "phone":phone,
+                        "mail":mail,
+                        "pic1":checkedpic[0],
+                        "pic2":checkedpic[1],
                     },
-                    dataType: "json",
-                    success: function()
+                    timeout: 30000,
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    jsonpCallback: "callbackName",
+                    success: function(json)
                     {
-                        loadpic(checkedpic);
-                        console.log(checkedpic.length);
-                        $("#page2").hide();
-                        $("#page3").show();
+                        if(json.check == 1)
+                        {
+                            $("#info2").html("报名信息录入失败，请重试");
+                        }
+                        else if(json.check == 2)
+                        {
+                            $("#info2").html("报名信息与其他用户重复，请检查");
+                        }
+                        else if(json.check == 4)
+                        {
+                            $("#info2").html("连接数据库失败");
+                        }
+                        else
+                        {
+                            loadpic(checkedpic);
+                            //console.log(checkedpic.length);
+                            $("#num").html(json.check);
+                            //console.log(json.check);
+                            $("#page2").hide();
+                            $("#page3").show();
+                        }
                     }, 
-                    error: function()
+                    error: function(jqXHR, textStatus, errorThrown)
                     {
-                        loadpic(checkedpic);
-                        console.log(checkedpic.length)
-                        $("#page2").hide();
-                        $("#page3").show();
+                        /*console.log(textStatus);
+                        console.log(jqXHR.status);
+                        console.log(jqXHR.readyState);*/
+                        $("#info2").html("请求发送失败，请重试");
                     }
                 }
             )
@@ -108,7 +111,7 @@ $("#next2").click(
 
 function loadpic(checkedpic)
 {
-   if(checkedpic.length == 1)
+   if(checkedpic[1] == "none")
    {
        $("#selected2").css("display", "none");
        if(checkedpic[0] == "diy")
