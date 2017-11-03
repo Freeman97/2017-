@@ -124,7 +124,7 @@ function loadpic(checkedpic)
            var a = checkedpic[0].split("");
            $("num1").html(a[3]);
            console.log(a[3])
-           $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg")
+           $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg)")
        }
    }
    else
@@ -137,7 +137,7 @@ function loadpic(checkedpic)
             var a = checkedpic[1].split("");
             //$("imgname2").html("图案" + a[3]);
             $("#num2").html(a[3])
-            $("#img2").css("background-image", "url(img/" + checkedpic[1] + ".jpg")
+            $("#img2").css("background-image", "url(img/" + checkedpic[1] + ".jpg)")
        }
        else if(checkedpic[1] == "diy")
        {
@@ -146,7 +146,7 @@ function loadpic(checkedpic)
             var a = checkedpic[0].split("");
             //$("imgname1").html("图案" + a[3]);
            $("#num1").html(a[3]);
-            $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg")
+            $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg)")
        }
        else
        {
@@ -154,10 +154,10 @@ function loadpic(checkedpic)
            var b = checkedpic[1].split("");
            //$("imgname1").html("图案" + a[3]);
            $("#num1").html(a[3]);
-           $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg")
+           $("#img1").css("background-image", "url(img/" + checkedpic[0] + ".jpg)")
            //$("imgname2").html("图案" + a[3]);
            $("#num2").html(b[3]);
-           $("#img2").css("background-image", "url(img/" + checkedpic[1] + ".jpg")
+           $("#img2").css("background-image", "url(img/" + checkedpic[1] + ".jpg)")
        }
    }
 }
